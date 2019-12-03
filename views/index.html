@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pipefy Apps Client.js -->
+    <script src="https://d1ukdhoxof1oxs.cloudfront.net/pipefy-client.js"></script>
+  </head>
+  <body>
+    <script>
+      PipefyApp.initCall({
+        'pipe-view': function(p, pipe) {
+          return (
+            {
+              icon: 'https://cdn.glitch.com/921750f9-5c7c-4842-b805-9b8b2579d82e%2Freact-icon.svg?1507935176075',
+              text: 'React View Top',
+              url: './view.html',
+              hide_create_button: false,
+            }
+          )
+        },
+        'card-tab': function(p, pipe) {
+           return {
+             icon: 'https://cdn.glitch.com/03813ab1-4482-45be-b7f7-74e8948d7ae7%2Ficon-blue.svg?1505357332379',
+             title: 'Time Tracking',
+             url: './view.html',
+             buttons: [
+               {
+                 text: 'Teste',
+                 callback: function(p) {
+                   p.dropdown({
+                     title: 'Sample Tab button',
+                     items: [
+                       {
+                         title: '😈  Attach Random Emoji',
+                         callback: () => console.log("Random"),
+                       },
+                       {
+                         title: '🔍 Search and Attach',
+                         callback: () => console.log("Search"),
+                       },
+                     ]
+                   });
+                 }
+               },
+             ]
+           }
+        },
+      });
+    </script>
+  </body>
+</html>
